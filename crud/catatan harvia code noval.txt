@@ -1,0 +1,76 @@
+CATATAN MEMBUAT HARVIACODE NOVAL
+
+- buatlah table pengguna dengan field sebagai berikut
+	* idpengguna char(10)
+	* namapengguna varchar(50)
+	* notelp varchar(20)
+	* email varchar (50)
+	* foto text
+	* username varchar(50)
+	* password varchar(50)
+	* level char(1)
+	* statusaktif enum(Aktif, Tidak Aktif)
+
+- buat function di sql untuk kode otomatis
+	contoh di table pengguna.idpengguna
+	buat seperti ini
+	f_idpengguna_create
+	
+	contog lagi table kategori.idkategori
+	buat seperti ini
+	f_idkategori_create
+
+- jangan menggunakan id autoincrement, 
+  tapi gunakan lah kode otomatis di query
+
+
+--------------------------------------------------------
+SELAMAT MENCOBA
+copas pembuatan tanle pengguna
+user : noval
+pass : 123456
+
+
+
+/*
+SQLyog Ultimate v10.42 
+MySQL - 5.5.5-10.4.11-MariaDB : Database - test
+*********************************************************************
+*/
+/*!40101 SET NAMES utf8 */;
+
+/*!40101 SET SQL_MODE=''*/;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`ubahNamaDatabase` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
+USE `ubahNamaDatabase`;
+
+/*Table structure for table `pengguna` */
+
+DROP TABLE IF EXISTS `pengguna`;
+
+CREATE TABLE `pengguna` (
+  `idpengguna` CHAR(10) NOT NULL,
+  `namapengguna` VARCHAR(50) DEFAULT NULL,
+  `notelp` VARCHAR(20) DEFAULT NULL,
+  `email` VARCHAR(50) DEFAULT NULL,
+  `foto` VARCHAR(255) DEFAULT NULL,
+  `username` VARCHAR(50) DEFAULT NULL,
+  `password` VARCHAR(50) DEFAULT NULL,
+  `level` CHAR(1) DEFAULT NULL,
+  `statusaktif` CHAR(1) DEFAULT NULL,
+  PRIMARY KEY (`idpengguna`)
+) ENGINE=INNODB DEFAULT CHARSET=latin1;
+
+/*Data for the table `pengguna` */
+
+INSERT  INTO `pengguna`(`idpengguna`,`namapengguna`,`notelp`,`email`,`foto`,`username`,`password`,`level`,`statusaktif`) VALUES ('PGN-000001','Muhammad Noval','082153003854','novalprogrammer@gmail.com','admin.png','noval','e10adc3949ba59abbe56e057f20f883e','1','1');
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
